@@ -1,0 +1,50 @@
+{% extends 'plantilla.html' %}
+{% load static %}
+
+
+
+{% block contenido1 %}
+	<!-- main-slider -->
+	<ul id="demo1">
+		<li>
+			<img src="{% static 'imagenes/imagen_inicio1.jpg' %}" alt="" />
+			<!--Slider Description example-->
+			<div class="slide-desc">
+				<h3>Reserva tu Cancha</h3>
+			</div>
+		</li>
+		<li>
+			<img src="{% static 'imagenes/imagen_inicio2.jpg'' %}" alt="" height="100%" />
+			<div class="slide-desc">
+				<h3>Reserva tu Cancha</h3>
+			</div>
+		</li>
+
+		<li>
+			<img src="{% static 'imagenes/imagen_inicio1.jpg'' %}" alt="" />
+			<div class="slide-desc">
+				<h3>Reserva tu Cancha</h3>
+			</div>
+		</li>
+	</ul>
+	<!-- //main-slider -->
+{% endblock contenido1  %}
+
+{% block contenido2 %}
+	<!-- top-brands -->
+	<div class="top-brands">
+		<div class="container">
+			<h2>Quienes Somos</h2>
+			<div class="grid_3 grid_5">
+				<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+					<div id="myTabContent" class="tab-content">
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endblock contenido2 %}
+	
+
+	
