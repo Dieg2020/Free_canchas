@@ -1,0 +1,62 @@
+{% extends 'plantilla.html' %}
+{% load static %}
+
+{% block contenido0 %}
+<div class="breadcrumbs">
+	<div class="container">
+		<ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+			<li><a href="{% url 'inicio' %}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Inicio</a></li>
+			<li class="active">Inicio de sesion</li>
+		</ol>
+	</div>
+</div>
+{% endblock contenido0 %}
+	<!-- //breadcrumbs -->
+	<!--- groceries --->
+{% block contenido1 %}
+ 
+{% comment %} <script>
+	/*global grecaptcha*/
+	grecaptcha.ready(function() {
+		grecaptcha.execute('6LcWdPEZAAAAAP0qqgllh4ifdN2tKMGj-hTI0eJy', {action: "/register/"}).then(function(token) {
+		  document.getElementById('g-recaptcha-response').value = token;
+		});
+	});
+  </script> {% endcomment %}
+
+<!-- login -->
+	<div class="login">
+		<div class="container">
+			<h2>Inicio de sesion</h2>
+			{% if form.errors %}
+				<br>
+				<h3 style="text-align:center;">Tu nombre de usuario o contraseña no son los correctos. 
+				<br>Porfavor intenta nuevamente.</h3>
+			{% endif %}
+			<div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
+				<form action="{% url 'iniciar_sesion' %}" method="post">
+					{% csrf_token %}
+					{{ form.username }}
+					{{ form.password }}
+					<!--
+					<input type="text" placeholder="Ingrese su Usuario" required=" " name="username">
+					<input type="password" placeholder="Contraseña" required=" " name="password">
+					-->
+					<div class="forgot">
+						<a href="{% url 'password_reset' %}">Olvido su contraseña?</a>
+					</div>
+					<input type="submit" value="Iniciar">socialauth_user
+					<input type="hidden" name="next" value="{{ inicio }}">		
+				</form>
+				<br>
+				<li class="google">
+					<img  src="{% static 'imageneshw/iconogoogle.png' %}" alt="32" width="32">
+                   <!-- <a href="{% url "social:begin" "google-oauth2"  %}"> Iniciar con Google </a>-->
+				</li>
+			</div>
+			<h4>Eres nuevo?</h4>
+			<p><a href="{% url 'register' %}">Registrate aqui</a> o Vuelve al Inicio<a href="{% url 'inicio' %}">Inicio<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
+		</div>
+	</div>
+<!-- //login -->
+{% endblock contenido1 %}

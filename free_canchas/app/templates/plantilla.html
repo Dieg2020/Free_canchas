@@ -74,8 +74,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					{% if user.is_authenticated %}
 						<li><a href="{% url 'cerrar_sesion' %}"> Salir </a></li>
 					{% else %}
-			            <li><a >  Crear cuenta </a></li> 
-						<li><a > Iniciar sesion</a></li>
+			            <li><a   href="{% url 'register' %}" >Crear cuenta </a></li> 
+						<li><a href="{% url 'iniciar_sesion' %}"> Iniciar sesion</a></li>
 					{% endif %}
 					<!--<li><a href="contact.html">Ayuda</a></li> -->
 
