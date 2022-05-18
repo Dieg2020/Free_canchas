@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'social_django',
     'pwa',
     'app',
-    'captcha',
     
 ]
 
@@ -78,11 +77,14 @@ WSGI_APPLICATION = 'free_canchas.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'freefield',
+        'USER': 'root',
+        'PASSWORD': 'tree123',
+        'HOST': 'localhost',
+        'PORT': '3306',
         
     }
 }

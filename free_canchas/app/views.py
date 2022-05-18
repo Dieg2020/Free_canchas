@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import  User, Usuario
+from .models import  User, Usuario,RolUsuario1
 from django.contrib.auth import logout, authenticate, login
 from app.forms import *
 from django.db.models import Q
@@ -62,7 +62,7 @@ def user_register(request):
                 user.last_name = form.cleaned_data['lastname']
                 user.save()
 
-                Query = RolUsuario.objects.all().filter(DescipcionRol = 'Cliente')
+                Query = RolUsuario1.objects.all().filter(DescipcionRol = 'Cliente')
                 usuario = Usuario(
                     user=user,
                     DireccionUsuario = form.cleaned_data['DireccionUsuario'],
